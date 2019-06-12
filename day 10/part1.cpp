@@ -38,8 +38,8 @@ vector<string> split(string input, const string& delimiters)
 
 void print(vector<vector<int>>& sky)
 {
-    int colStart = 300;
-    int colCutOff = 460;
+    int colStart = 100;
+    int colCutOff = 200;
     int noOfPoints = 0;
     for (const vector<int>& skyRow : sky)
     {
@@ -47,11 +47,15 @@ void print(vector<vector<int>>& sky)
         {
             for (int j = colStart; j < colCutOff; j++)
             {
-                cout<<skyRow[j];
-                // if (col == 1)
-                //     noOfPoints++;
+            	if (skyRow[j] == 1)
+                	cout<<skyRow[j];
+                else
+                	cout<<" ";
+                if (skyRow[j] == 1)
+                    noOfPoints++;
             }
             cout<<endl;
+            // cout<<"((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((("<<endl;
         }
     }
     cout<<"Total no of points "<<noOfPoints<<endl;
@@ -100,7 +104,7 @@ int main()
 	
 	cout<<"bounds are "<<minX<<", "<<maxX<<" for Y "<<minY<<", "<<maxY<<endl;
 	
-	int boundSize = 3500;
+	int boundSize = 450;
 	const int rows = boundSize;
 	const int cols = boundSize;
 	
